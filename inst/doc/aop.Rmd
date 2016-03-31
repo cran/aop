@@ -8,7 +8,7 @@ vignette: >
   %\VignetteEngine{knitr::rmarkdown}
 ---
 
-This vignette describes how to use the _aop_ package. The _aop_ package is a Bioconductor package that is intended to facilitate the analysis of adverse outcome pathways (AOPs). With this first release, the _aop_ package contains code that will allow users to use graph theory to identify those nodes in an AOP that must be measured to make a causal statement. Future releases will include code that will make it easier to use graph theory to computationally predict AOPs.
+This vignette describes how to use the _aop_ package. The _aop_ package is intended to facilitate the analysis of adverse outcome pathways (AOPs). With this first release, the _aop_ package contains code that will allow users to use graph theory to identify those nodes in an AOP that must be measured to make a causal statement. Future releases will include code that will make it easier to use graph theory to computationally predict AOPs.
 
 ## Background
 
@@ -22,7 +22,7 @@ NOTE: for the backdoor analysis, the only information required is the network, t
 
 Here is a picture of the AOP we'll be analyzing:
 
-![](..\\inst\\extdata\\steatosis_aop.png)
+![](../inst/extdata/steatosis_aop.png)
 
 The following code block shows how to input an AOP file that has been exported from Cytoscape as a Cytoscape JSON file.
 
@@ -49,13 +49,7 @@ steatosis_graph <- convert_aop_to_graph(steatosis_aop)
 plot(steatosis_graph)
 ```
 
-As you can see, the graphs are largely similar. The challenge with the R-based graph picture is that the nodes aren't labeled in a very meaningful way, but it's easy to see what the nodes map to. For instance, if you want to see what node 387 maps to, you would could do:
-
-```{r}
-steatosis_aop@nodes$"387"$data$name
-```
-
-An easier way of doing the same thing would be to use:
+As you can see, the graphs are largely similar. The challenge with the R-based graph picture is that the nodes aren't labeled in a very meaningful way, but it's easy to see what the nodes map to. For instance, if you want to see what node 387 maps to, you would do:
 
 ```{r}
 getAOPNodeName(steatosis_aop, "387")

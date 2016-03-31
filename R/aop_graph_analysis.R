@@ -21,6 +21,8 @@
 #' plot(steatosis_aop_graph)
 #' 
 #' @import graph
+#' @import Rgraphviz
+#' @import methods
 #' 
 #' @export
 convert_aop_to_graph <- function(aop){
